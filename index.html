@@ -823,10 +823,11 @@
 
             <p class="apply-lede">Submit your details to apply.</p>
 
-            <form action="https://formsubmit.co/info@eveningtechschool.com" method="POST" enctype="multipart/form-data" class="application-form" id="applyForm">
+            <form action="https://formsubmit.co/project.progress100@gmail.com" method="POST" enctype="multipart/form-data" class="application-form" id="applyForm">
 
                 <input type="hidden" name="_captcha" value="false">
                 <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="_next" id="nextUrl" value="https://eveningtechschool.com/thank-you.html">
                 <input type="hidden" name="_subject" value="New application: Evening Tech School">
                 <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
 
@@ -954,6 +955,14 @@
             resumeInput.setCustomValidity(f && f.size > 5 * 1024 * 1024 ? 'Please attach a file under 5 MB.' : '');
         });
         document.getElementById('applyForm').addEventListener('submit', function () {
+            /* Send people to thank-you.html on whichever domain the site is hosted */
+            if (/^https?:$/.test(location.protocol)) {
+                var sel = document.getElementById('selected_program');
+                var opt = sel.options[sel.selectedIndex];
+                var next = new URL('thank-you.html', location.href);
+                if (opt && opt.hasAttribute('data-eoi')) next.searchParams.set('type', 'eoi');
+                document.getElementById('nextUrl').value = next.href;
+            }
             var b = this.querySelector('.btn-submit');
             b.disabled = true;
             b.textContent = 'Sending...';
