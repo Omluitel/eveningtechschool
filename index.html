@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evening Tech School | Live IT Support, Cloud and DevOps Training</title>
+    <meta name="description" content="Live online IT Support Job Ready Program with weekend and weekday evening classes, taught by working engineers. Cloud Engineer and DevOps tracks: expressions of interest open. Sydney time.">
+
+    <link rel="canonical" href="https://eveningtechschool.com/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Evening Tech School">
+    <meta property="og:title" content="Evening Tech School | Live IT Support, Cloud and DevOps Training">
+    <meta property="og:description" content="Live online IT Support Job Ready Program, taught by working engineers. Weekend and weekday evening classes, Sydney time.">
+    <meta property="og:url" content="https://eveningtechschool.com/">
+    <meta property="og:image" content="https://eveningtechschool.com/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="en_AU">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Evening Tech School | Live IT Support, Cloud and DevOps Training">
+    <meta name="twitter:description" content="Live online IT Support Job Ready Program, taught by working engineers.">
+    <meta name="twitter:image" content="https://eveningtechschool.com/og-image.png">
+
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="favicon.png">
+
+    <meta name="theme-color" content="#14183A">
+    <meta name="msapplication-navbutton-color" content="#14183A">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- BRAND TOKENS (from the Evening Tech School brand canvas) --- */
+        :root {
+            --midnight: #14183A;   /* backgrounds, headings */
+            --twilight: #232A6B;   /* bands and panels */
+            --dusk: #3D4180;       /* secondary text on light */
+            --amber: #FF9A4D;      /* the one accent: buttons and the sun */
+            --glow: #FFB878;       /* amber highlight on dark */
+            --mist: #F4F5FA;       /* light sections */
+
+            --card: #1C2254;
+            --soft: #D6D9F5;
+            --muted: #C9CDF2;
+            --line: rgba(255, 255, 255, 0.14);
+
+            --display: 'Bricolage Grotesque', 'Trebuchet MS', system-ui, sans-serif;
+            --body: 'DM Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+            color-scheme: dark;
+        }
+
+        /* --- Reset & Global --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; scroll-padding-top: 92px; }
+        body {
+            font-family: var(--body);
+            background: var(--midnight);
+            color: #FFFFFF;
+            line-height: 1.6;
+            font-size: 17px;
+            overflow-x: hidden;
+        }
+        a { color: inherit; text-decoration: none; }
+        ul { list-style: none; }
+        button { font-family: var(--body); }
+        h1, h2, h3 { font-family: var(--display); font-weight: 800; letter-spacing: -0.02em; line-height: 1.1; text-wrap: balance; }
+        :focus-visible { outline: 3px solid var(--amber); outline-offset: 3px; border-radius: 6px; }
+
+        .skip-link { position: absolute; left: 16px; top: -100px; z-index: 2000; padding: 12px 18px; border-radius: 10px; background: var(--amber); color: var(--midnight); font-weight: 700; }
+        .skip-link:focus { top: 12px; }
+        .container { max-width: 1160px; margin: 0 auto; padding: 0 20px; }
+        section { padding: 84px 0; }
+
+        .eyebrow {
+            font-size: 0.78rem; letter-spacing: 0.2em; text-transform: uppercase;
+            font-weight: 700; color: var(--amber);
+        }
+        .sec-head { max-width: 640px; margin-bottom: 44px; }
+        .sec-head h2 { font-size: clamp(1.9rem, 4.2vw, 2.8rem); margin-top: 12px; }
+        .sec-head p { margin-top: 14px; color: var(--muted); font-size: 1.1rem; }
+        .sec-head .eyebrow, .pane-head > .eyebrow, .udemy .eyebrow { margin-top: 0; font-size: 0.78rem; }
+        .sec-head .eyebrow, .pane-head > .eyebrow { color: var(--amber); }
+
+        .card { background: var(--card); border: 1px solid var(--line); border-radius: 22px; }
+        .band { background: var(--twilight); --card: #14183A; }
+
+        /* --- Buttons --- */
+        .btn {
+            display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+            min-height: 48px; padding: 0 26px; border-radius: 999px;
+            font-weight: 700; font-size: 1rem; line-height: 1.2; text-align: center;
+            border: 2px solid transparent; cursor: pointer;
+            transition: background-color 0.2s, border-color 0.2s, transform 0.2s;
+        }
+        .btn-amber { background: var(--amber); color: var(--midnight); }
+        .btn-amber:hover { background: var(--glow); transform: translateY(-2px); }
+        .btn-ghost { border-color: rgba(255, 255, 255, 0.4); color: #FFFFFF; background: transparent; }
+        .btn-ghost:hover { border-color: #FFFFFF; }
+        .btn-ink { background: var(--midnight); color: #FFFFFF; }
+        .btn-ink:hover { background: var(--twilight); transform: translateY(-2px); }
+        .btn-sm { min-height: 44px; padding: 0 22px; font-size: 0.95rem; }
+
+        /* --- Navbar --- */
+        .navbar { position: sticky; top: 0; z-index: 1000; isolation: isolate; border-bottom: 1px solid rgba(255, 255, 255, 0.08); }
+        .navbar::before {
+            content: ""; position: absolute; inset: 0; z-index: -1;
+            background: rgba(20, 24, 58, 0.92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+        }
+        .nav-container { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 76px; }
+        .brand { display: flex; align-items: center; gap: 12px; position: relative; z-index: 1001; }
+        .brand svg { flex: none; }
+        .brand-name { font-family: var(--display); font-weight: 800; font-size: 1.4rem; letter-spacing: -0.01em; line-height: 1; }
+        .brand-name small { display: block; font-family: var(--body); font-weight: 600; font-size: 0.68rem; letter-spacing: 0.3em; color: var(--amber); margin-top: 5px; }
+
+        .nav-links { display: flex; align-items: center; gap: 26px; }
+        .nav-links a:not(.btn) { color: var(--soft); font-size: 0.95rem; font-weight: 500; display: inline-block; padding: 12px 2px; }
+        .nav-links a:not(.btn):hover { color: #FFFFFF; }
+        .nav-links .mobile-cta { display: none; }
+
+        .menu-btn {
+            display: none; position: relative; z-index: 1001;
+            width: 48px; height: 48px; border-radius: 12px; border: 1px solid var(--line);
+            background: transparent; cursor: pointer; align-items: center; justify-content: center; flex-direction: column; gap: 5px;
+        }
+        .menu-btn span { display: block; width: 22px; height: 2px; background: #FFFFFF; border-radius: 2px; transition: transform 0.3s, opacity 0.3s; }
+        .menu-btn.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+        .menu-btn.active span:nth-child(2) { opacity: 0; }
+        .menu-btn.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+        /* --- Hero --- */
+        .hero { position: relative; overflow: hidden; padding: 72px 0 88px; }
+        .hero-rings { position: absolute; right: -160px; top: 50%; transform: translateY(-50%); width: 860px; height: 860px; max-width: none; pointer-events: none; }
+        .hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.7fr); gap: 40px; align-items: center; }
+        .hero h1 { font-size: clamp(2.3rem, 5.6vw, 4.4rem); margin: 18px 0 22px; }
+        .hero h1 span { color: var(--amber); }
+        .hero-sub { max-width: 34em; font-size: clamp(1.05rem, 2.2vw, 1.2rem); color: var(--soft); }
+        .cta-row { margin-top: 32px; display: flex; flex-wrap: wrap; gap: 14px; }
+        .hero-sun { justify-self: center; width: min(100%, 340px); height: auto; }
+
+        /* --- Facts strip --- */
+        .facts { background: var(--twilight); }
+        .facts ul { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); }
+        .facts li { padding: 22px 20px; border-left: 1px solid rgba(255, 255, 255, 0.14); }
+        .facts li:first-child { border-left: 0; padding-left: 0; }
+        .facts b { display: block; font-family: var(--display); font-weight: 800; font-size: 1.6rem; letter-spacing: -0.01em; line-height: 1.1; }
+        .facts span { display: block; margin-top: 4px; font-size: 0.9rem; color: var(--muted); }
+
+        /* --- Programs --- */
+        .program-duo { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+        .program { padding: 28px; display: flex; flex-direction: column; gap: 14px; }
+        .program.featured { background: var(--twilight); }
+        .program .chip { align-self: flex-start; }
+        .program h3 { font-size: clamp(1.5rem, 2.4vw, 1.8rem); margin-top: 2px; }
+        .program > p { color: var(--soft); }
+        .slots { display: flex; flex-direction: column; gap: 12px; margin-top: 4px; }
+        .slot-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); }
+        .slot-time { font-family: var(--display); font-weight: 800; font-size: 1.5rem; letter-spacing: -0.02em; color: var(--amber); line-height: 1.15; }
+        .slots .pf-meta { font-size: 0.95rem; color: var(--muted); }
+        @supports (grid-template-rows: subgrid) {
+            @media (min-width: 901px) {
+                .program-duo { grid-template-rows: repeat(6, auto); row-gap: 0; }
+                .program { display: grid; grid-row: span 6; grid-template-rows: subgrid; row-gap: 14px; align-content: start; }
+                .program > .req, .program > .slots { align-self: start; }
+                .program > .slots { margin-top: 0; }
+                .program > .chip { justify-self: start; }
+                .program > .actions { align-self: end; }
+            }
+        }
+        .req { padding: 12px 16px; border-radius: 14px; background: rgba(255, 154, 77, 0.14); border: 1px solid rgba(255, 154, 77, 0.4); color: #FFFFFF; font-size: 0.95rem; line-height: 1.5; }
+        [role="tabpanel"] > .req { margin-bottom: 16px; }
+        .req-links { display: flex; flex-wrap: wrap; gap: 0 22px; }
+        .pane-req { max-width: 760px; margin: 22px auto 0; text-align: left; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 6px 20px; }
+        .chip { display: inline-block; padding: 3px 12px; border-radius: 999px; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--glow); border: 1px solid rgba(255, 154, 77, 0.5); }
+        .pills { display: flex; flex-wrap: wrap; align-content: flex-start; align-items: flex-start; gap: 8px; }
+        .pill.cert { border-color: rgba(255, 154, 77, 0.6); color: var(--glow); font-weight: 600; }
+        .pill { padding: 6px 14px; border-radius: 999px; background: rgba(255, 255, 255, 0.07); border: 1px solid var(--line); font-size: 0.92rem; line-height: 1.4; }
+        .actions { margin-top: auto; padding-top: 10px; display: flex; flex-wrap: wrap; align-items: center; gap: 8px 22px; }
+        .link-btn { min-height: 44px; padding: 0; background: none; border: 0; cursor: pointer; color: var(--glow); font-weight: 700; font-size: 0.98rem; text-decoration: underline; text-underline-offset: 4px; }
+        .link-btn:hover { color: #FFFFFF; }
+        @media (max-width: 900px) {
+            .program-duo { grid-template-columns: minmax(0, 1fr); }
+        }
+        @media (max-width: 600px) {
+            .program { padding: 24px; }
+            .actions .btn { width: 100%; }
+        }
+
+        /* --- Udemy (light section) --- */
+        .udemy { background: var(--mist); color: var(--midnight); }
+        .udemy .eyebrow { color: var(--dusk); }
+        .udemy-grid { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.7fr); gap: 48px; align-items: center; }
+        .udemy h2 { font-size: clamp(1.9rem, 4.2vw, 2.8rem); margin: 12px 0 16px; }
+        .udemy p { color: var(--dusk); font-size: 1.1rem; max-width: 36em; }
+        .udemy p strong { color: var(--midnight); }
+        .udemy-side { display: flex; flex-direction: column; align-items: flex-start; gap: 22px; }
+        .stat b { display: block; font-family: var(--display); font-weight: 800; font-size: clamp(3rem, 7vw, 4.6rem); line-height: 1; letter-spacing: -0.03em; }
+        .stat span { display: block; margin-top: 6px; font-weight: 600; color: var(--dusk); }
+
+        /* --- Admissions --- */
+        .pane { margin: 0 auto; border-radius: 28px; overflow: hidden; }
+        .pane-head { padding: 52px 28px 40px; text-align: center; background: linear-gradient(180deg, #232A6B 0%, var(--card) 100%); }
+        .pane-head h2 { font-size: clamp(1.9rem, 4.2vw, 2.8rem); margin: 12px 0 10px; }
+        .pane-head > p { color: var(--muted); font-size: 1.1rem; }
+        .batches { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; max-width: 760px; margin: 32px auto 0; text-align: left; }
+        .batch { background: rgba(255, 255, 255, 0.05); border: 1px solid var(--line); border-radius: 20px; padding: 28px; display: flex; flex-direction: column; gap: 6px; }
+        .batch .chip { align-self: flex-start; margin-bottom: 8px; }
+        .batch h3 { font-size: 1.5rem; }
+        .batch-days { color: var(--soft); }
+        .batch-time { font-family: var(--display); font-weight: 800; font-size: 1.45rem; letter-spacing: -0.02em; color: var(--amber); line-height: 1.15; margin-top: 4px; }
+        .batch-time small { display: block; font-family: var(--body); font-weight: 500; font-size: 0.85rem; letter-spacing: 0; color: var(--muted); margin-top: 4px; }
+        .batch .btn { align-self: flex-start; margin-top: auto; }
+        .batch-days { margin-bottom: 4px; }
+        .batch-time { margin-bottom: 18px; }
+
+        .pane-details { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--line); }
+        .detail { padding: 34px 22px; text-align: center; border-right: 1px solid var(--line); }
+        .detail:last-child { border-right: 0; }
+        .detail-label { display: block; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.18em; color: var(--muted); font-weight: 700; margin-bottom: 12px; }
+        .detail-value { font-family: var(--display); font-weight: 800; font-size: 1.4rem; line-height: 1.2; letter-spacing: -0.01em; color: var(--glow); }
+        .detail-note { margin: 10px auto 0; max-width: 240px; font-size: 0.92rem; color: var(--muted); }
+
+        .tracks { display: flex; flex-direction: column; gap: 14px; }
+        .track-group { display: flex; flex-direction: column; gap: 8px; }
+        .track-block { margin-top: 36px; }
+        [role="tabpanel"] > .req + .track-block { margin-top: 24px; }
+        .track-head { margin-bottom: 14px; }
+        .track-head h3 { font-size: clamp(1.4rem, 2.6vw, 1.8rem); }
+        .track-head p { margin-top: 4px; color: var(--muted); font-size: 0.98rem; }
+        .module-grid.cols3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+        @media (max-width: 900px) { .module-grid.cols3 { grid-template-columns: minmax(0, 1fr); } }
+
+        /* --- Syllabus --- */
+        .tabs { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 28px; }
+        .tab { min-height: 48px; padding: 0 22px; border-radius: 999px; border: 2px solid var(--line); background: transparent; color: var(--soft); font-weight: 700; font-size: 1rem; cursor: pointer; transition: background-color 0.2s, border-color 0.2s; }
+        .tab:hover { border-color: #FFFFFF; color: #FFFFFF; }
+        .tab[aria-selected="true"] { background: var(--amber); border-color: var(--amber); color: var(--midnight); }
+        .module-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+        .module { padding: 26px 28px; display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+        .module.wide { grid-column: 1 / -1; }
+        .module-no { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--amber); }
+        .module h3 { font-size: 1.3rem; }
+        .module-desc { color: var(--muted); font-size: 0.98rem; margin-bottom: 8px; }
+        .module ul:not(.pills) { display: flex; flex-direction: column; gap: 8px; }
+        .module li:not(.pill) { position: relative; padding-left: 20px; font-size: 0.98rem; line-height: 1.45; }
+        .module li:not(.pill)::before { content: ""; position: absolute; left: 2px; top: 0.55em; width: 7px; height: 7px; border-radius: 50%; background: var(--amber); }
+        @media (max-width: 720px) {
+            .module-grid { grid-template-columns: minmax(0, 1fr); }
+            .module { padding: 22px; }
+            .tab { flex: 1 1 auto; }
+        }
+
+        /* --- Footer / Apply --- */
+        .footer { padding: 84px 0 40px; background: #0E1130; text-align: center; border-top: 1px solid var(--line); }
+        .footer h2 { font-size: clamp(1.9rem, 4.2vw, 2.8rem); margin-bottom: 14px; }
+        .footer-lede { color: var(--muted); margin-bottom: 36px; }
+        .booking { max-width: 600px; margin: 0 auto; padding: 32px; border-radius: 20px; background: var(--twilight); border: 1px solid var(--line); }
+        .booking p { margin-bottom: 18px; color: var(--soft); }
+        .divider-or { display: flex; align-items: center; max-width: 550px; margin: 30px auto; color: var(--muted); font-weight: 700; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.14em; }
+        .divider-or::before, .divider-or::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+        .divider-or::before { margin-right: 15px; }
+        .divider-or::after { margin-left: 15px; }
+        .apply-lede { color: var(--muted); font-size: 0.95rem; margin-bottom: 18px; }
+
+        .application-form { max-width: 560px; margin: 0 auto; padding: 36px; text-align: left; border-radius: 22px; background: var(--card); border: 1px solid var(--line); }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 8px; font-size: 0.92rem; font-weight: 600; color: #FFFFFF; }
+        .application-form input, .application-form textarea, .application-form select {
+            width: 100%; padding: 14px 16px; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.22);
+            background-color: #14183A; color: #FFFFFF; font-family: var(--body); font-size: 1rem; appearance: none; -webkit-appearance: none;
+        }
+        .application-form input::placeholder, .application-form textarea::placeholder { color: #9EA3D6; }
+        .application-form select {
+            background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23cbd5e1%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+            background-repeat: no-repeat; background-position: right 16px top 50%; background-size: 12px auto; cursor: pointer; padding-right: 40px;
+        }
+        .application-form input:focus, .application-form textarea:focus, .application-form select:focus {
+            outline: none; border-color: var(--amber); box-shadow: 0 0 0 3px rgba(255, 154, 77, 0.3);
+        }
+        .application-form select option { background: #14183A; color: #FFFFFF; }
+        .form-row { display: flex; gap: 15px; }
+        .half-width { flex: 1; min-width: 0; }
+        .btn-submit { width: 100%; margin-top: 6px; }
+        .btn-submit[disabled] { opacity: 0.7; cursor: progress; transform: none; }
+        .application-form .hp { position: absolute; left: 0; top: 0; width: 1px; height: 1px; padding: 0; border: 0; opacity: 0; pointer-events: none; }
+        .application-form { position: relative; }
+        .form-note { margin-top: 14px; font-size: 0.85rem; color: var(--muted); text-align: center; }
+        .application-form .check label { display: flex; gap: 12px; align-items: flex-start; font-weight: 500; cursor: pointer; }
+        .application-form .check input { appearance: auto; -webkit-appearance: checkbox; width: 22px; height: 22px; flex: none; padding: 0; margin-top: 1px; accent-color: #FF9A4D; }
+        .application-form input[type="file"] { appearance: auto; -webkit-appearance: auto; padding: 10px 12px; cursor: pointer; }
+        .application-form input[type="file"]::file-selector-button { margin-right: 14px; padding: 8px 16px; border: 0; border-radius: 999px; background: #FF9A4D; color: #14183A; font-weight: 700; font-family: var(--body); cursor: pointer; }
+
+        .footer-bottom { margin-top: 56px; color: var(--muted); font-size: 0.9rem; display: flex; flex-direction: column; gap: 4px; align-items: center; }
+        .footer-bottom a { text-decoration: underline; text-underline-offset: 3px; }
+
+        /* --- WhatsApp --- */
+        .whatsapp-float {
+            position: fixed; bottom: 28px; right: 28px; width: 60px; height: 60px; border-radius: 50%;
+            background: #25D366; display: flex; align-items: center; justify-content: center; z-index: 900;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35); animation: pulse-green 2.4s infinite; transition: transform 0.3s;
+        }
+        .whatsapp-float:hover { transform: scale(1.08); }
+        .whatsapp-icon { width: 32px; height: 32px; fill: #FFFFFF; }
+        @keyframes pulse-green {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6); }
+            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            .whatsapp-float { animation: none; }
+            * { transition: none !important; }
+        }
+
+        /* --- Tablet and phone --- */
+        @media (max-width: 900px) {
+            section { padding: 64px 0; }
+            .menu-btn { display: inline-flex; }
+            .nav-cta { display: none; }
+            .nav-links {
+                position: fixed; inset: 0; flex-direction: column; justify-content: center; gap: 26px;
+                background: var(--midnight); visibility: hidden; opacity: 0; transition: opacity 0.3s, visibility 0.3s;
+            }
+            .nav-links.active { visibility: visible; opacity: 1; }
+            .nav-links a:not(.btn) { font-size: 1.5rem; font-weight: 600; color: #FFFFFF; }
+            .nav-links .mobile-cta { display: block; margin-top: 8px; }
+            .hero { padding: 40px 0 60px; }
+            .hero-grid { grid-template-columns: minmax(0, 1fr) 180px; gap: 28px; }
+            .hero-sun { width: 180px; }
+            .hero-rings { right: -380px; opacity: 0.7; }
+            .facts ul { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+            .facts li:nth-child(odd) { border-left: 0; padding-left: 0; }
+            .facts li:nth-child(n+3) { border-top: 1px solid rgba(255, 255, 255, 0.14); }
+            .udemy-grid { grid-template-columns: minmax(0, 1fr); gap: 32px; }
+        }
+        @media (max-width: 720px) {
+            .hero-grid { grid-template-columns: minmax(0, 1fr); }
+            .hero-sun { display: none; }
+            .footer { padding-bottom: 104px; }
+            .batches { grid-template-columns: minmax(0, 1fr); max-width: 520px; }
+            .pane-details { grid-template-columns: minmax(0, 1fr); }
+            .detail { border-right: 0; border-bottom: 1px solid var(--line); }
+            .detail:last-child { border-bottom: 0; }
+            .form-row { flex-direction: column; gap: 0; }
+            .application-form { padding: 24px; }
+            .booking { padding: 24px; }
+            .pane-head { padding: 40px 18px 28px; }
+            .batch { padding: 22px; }
+            .whatsapp-float { bottom: 18px; right: 18px; width: 54px; height: 54px; }
+        }
+        @media (max-width: 480px) {
+            .brand-name { font-size: 1.2rem; }
+            .cta-row .btn { width: 100%; }
+            .facts b { font-size: 1.3rem; }
+            .batch .btn { width: 100%; }
+        }
+    </style>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "EducationalOrganization",
+        "name": "Evening Tech School",
+        "slogan": "Where working professionals create professionals",
+        "url": "https://eveningtechschool.com/",
+        "logo": "https://eveningtechschool.com/favicon.png",
+        "email": "info@eveningtechschool.com",
+        "areaServed": "AU"
+    }
+    </script>
+</head>
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+        <defs>
+            <linearGradient id="etsSg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFC785"/><stop offset="1" stop-color="#FF8A3D"/></linearGradient>
+            <linearGradient id="etsBg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#232A6B"/><stop offset="1" stop-color="#0E1130"/></linearGradient>
+            <mask id="etsMask" maskUnits="userSpaceOnUse" x="0" y="0" width="200" height="200">
+                <rect width="200" height="200" fill="#000000"/>
+                <circle cx="100" cy="112" r="58" fill="#FFFFFF"/>
+                <rect x="0" y="120" width="200" height="4" fill="#000000"/>
+                <rect x="0" y="130" width="200" height="5" fill="#000000"/>
+                <rect x="0" y="140" width="200" height="5" fill="#000000"/>
+                <rect x="0" y="149" width="200" height="5" fill="#000000"/>
+                <rect x="0" y="157" width="200" height="43" fill="#000000"/>
+                <polyline points="76,72 94,89 76,106" fill="none" stroke="#000000" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+                <line x1="103" y1="106" x2="126" y2="106" stroke="#000000" stroke-width="9" stroke-linecap="round"/>
+            </mask>
+            <symbol id="etsSun" viewBox="0 0 200 200"><circle cx="100" cy="112" r="58" fill="url(#etsSg)" mask="url(#etsMask)"/></symbol>
+            <symbol id="etsBadge" viewBox="0 0 200 200"><rect width="200" height="200" rx="46" fill="url(#etsBg)"/><rect x="1" y="1" width="198" height="198" rx="45" fill="none" stroke="#FFFFFF" stroke-opacity="0.10" stroke-width="2"/><use href="#etsSun" width="200" height="200"/></symbol>
+        </defs>
+    </svg>
+
+    <nav class="navbar" aria-label="Main">
+        <div class="container nav-container">
+            <a href="#hero" class="brand" aria-label="Evening Tech School home">
+                <svg width="44" height="44" viewBox="0 0 200 200" aria-hidden="true"><use href="#etsBadge"/></svg>
+                <span class="brand-name">Evening<small>TECH SCHOOL</small></span>
+            </a>
+
+            <button class="menu-btn" id="menuBtn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+                <span></span><span></span><span></span>
+            </button>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#programs">Programs</a></li>
+                <li><a href="#join">Admissions</a></li>
+                <li><a href="#curriculum">Syllabus</a></li>
+                <li class="nav-cta"><a href="#contact" class="btn btn-amber btn-sm">Apply now</a></li>
+                <li class="mobile-cta"><a href="#contact" class="btn btn-amber">Apply now</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main id="main">
+    <header id="hero" class="hero">
+        <svg class="hero-rings" viewBox="0 0 860 860" aria-hidden="true">
+            <circle cx="430" cy="430" r="180" fill="none" stroke="#FFFFFF" stroke-opacity="0.09" stroke-width="2"/>
+            <circle cx="430" cy="430" r="285" fill="none" stroke="#FFFFFF" stroke-opacity="0.07" stroke-width="2"/>
+            <circle cx="430" cy="430" r="400" fill="none" stroke="#FFFFFF" stroke-opacity="0.05" stroke-width="2"/>
+        </svg>
+        <div class="container hero-grid">
+            <div>
+                <p class="eyebrow">Where working professionals create professionals</p>
+                <h1>Mentorship from <span>Active Industry Engineers</span></h1>
+                <p class="hero-sub">We clock out from our IT jobs and clock in to train you. Real-world skills, live environments, and career strategy from mentors who are currently in the field.</p>
+                <div class="cta-row">
+                    <a href="#contact" class="btn btn-amber">Apply now</a>
+                    <a href="#join" class="btn btn-ghost">See class times</a>
+                </div>
+            </div>
+            <svg class="hero-sun" viewBox="34 46 132 132" role="img" aria-label="Evening Tech School mark: a setting sun with a terminal prompt">
+                <circle cx="100" cy="112" r="58" fill="url(#etsSg)" mask="url(#etsMask)"/>
+            </svg>
+        </div>
+    </header>
+
+    <div class="facts">
+        <div class="container">
+            <ul>
+                <li><b>Sat &amp; Sun</b><span>5&ndash;8pm weekend slot</span></li>
+                <li><b>Wed&ndash;Fri</b><span>6&ndash;8pm weekday slot</span></li>
+                <li><b>100% online</b><span>live and interactive</span></li>
+                <li><b>Lab-based</b><span>build it in your own lab</span></li>
+            </ul>
+        </div>
+    </div>
+
+    <section id="programs">
+        <div class="container">
+            <div class="sec-head">
+                <p class="eyebrow">Tracks</p>
+                <h2>Learn the skills behind the job</h2>
+                <p>Three hands-on tracks, taught live by working engineers. Every module is built in your own lab.</p>
+            </div>
+
+            <div class="program-duo">
+                <article class="program featured card">
+                    <span class="chip">Enrolling now</span>
+                    <div>
+                        <p class="slot-label">IT Support Job Ready Program</p>
+                        <h3>IT Support &amp; System Support Engineer</h3>
+                    </div>
+                    <p>Go from zero to service desk and systems support ready. Build your own lab, run Windows Server and Active Directory, manage Microsoft 365 and devices, solve real help desk tickets and get ready to apply.</p>
+                    <ul class="pills">
+                        <li class="pill">Windows Server</li><li class="pill">Active Directory</li><li class="pill">Microsoft 365</li><li class="pill">Intune</li><li class="pill">Backup &amp; recovery</li><li class="pill">Help desk tickets</li>
+                    </ul>
+                    <div class="slots">
+                        <div class="slot"><p class="slot-label">Weekend slot</p><p class="slot-time">Sat &amp; Sun, 5&ndash;8pm</p></div>
+                        <div class="slot"><p class="slot-label">Weekday slot</p><p class="slot-time">Wed, Thu &amp; Fri, 6&ndash;8pm</p></div>
+                        <p class="pf-meta">Live online &middot; Sydney time</p>
+                    </div>
+                    <div class="actions">
+                        <a href="#join" class="btn btn-amber">Choose a slot</a>
+                        <button type="button" class="link-btn" onclick="openSyllabus('it')">View syllabus &rarr;</button>
+                    </div>
+                </article>
+
+                <article class="program card">
+                    <span class="chip">Expression of interest</span>
+                    <div>
+                        <p class="slot-label">Track</p>
+                        <h3>Cloud Engineer</h3>
+                    </div>
+                    <p>For IT professionals who want to design, build and automate infrastructure in the cloud. Expressions of interest only for now.</p>
+                    <ul class="pills">
+                        <li class="pill cert">RHCSA / RHCE</li><li class="pill cert">AWS Solutions Architect</li><li class="pill cert">Terraform</li><li class="pill">Git &amp; GitHub</li><li class="pill">Python</li><li class="pill">Projects</li><li class="pill">Interview preparation</li>
+                    </ul>
+                    <div class="req">You must already be working in IT, and you must send your current resume with your expression of interest.</div>
+                    <div class="actions">
+                        <button type="button" class="btn btn-amber" onclick="selectProgram('cloud_eoi')">Submit expression of interest</button>
+                        <button type="button" class="link-btn" onclick="openSyllabus('cloud')">View syllabus &rarr;</button>
+                    </div>
+                </article>
+
+                <article class="program card">
+                    <span class="chip">Expression of interest</span>
+                    <div>
+                        <p class="slot-label">Track</p>
+                        <h3>DevOps</h3>
+                    </div>
+                    <p>For IT professionals who want to ship and run software with containers, pipelines and monitoring. Expressions of interest only for now.</p>
+                    <ul class="pills">
+                        <li class="pill cert">RHCSA / RHCE</li><li class="pill cert">AWS Solutions Architect</li><li class="pill cert">CKA</li><li class="pill">Docker</li><li class="pill">Jenkins</li><li class="pill">Prometheus &amp; Grafana</li><li class="pill">Git &amp; GitHub</li><li class="pill">Python</li><li class="pill">Projects</li><li class="pill">Interview preparation</li>
+                    </ul>
+                    <div class="req">You must already be working in IT, and you must send your current resume with your expression of interest.</div>
+                    <div class="actions">
+                        <button type="button" class="btn btn-amber" onclick="selectProgram('devops_eoi')">Submit expression of interest</button>
+                        <button type="button" class="link-btn" onclick="openSyllabus('devops')">View syllabus &rarr;</button>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section id="resources" class="udemy">
+        <div class="container udemy-grid">
+            <div>
+                <p class="eyebrow">Udemy instructor</p>
+                <h2>Start with Om's Udemy course</h2>
+                <p>Om teaches on Udemy. Start learning today with the self-paced course <strong>Entry Level IT Support Home Lab Projects for L1/L2 Engineers</strong>, a practical introduction to the skills we teach live.</p>
+            </div>
+            <div class="udemy-side">
+                <div class="stat"><b>1,400+</b><span>students on Udemy</span></div>
+                <a href="https://www.udemy.com/course/entry-level-it-support-home-lab-projects-for-l1l2-engineers/?referralCode=49AAF84133B694A480D1" target="_blank" rel="noopener" class="btn btn-ink" aria-label="View Entry Level IT Support course on Udemy">View on Udemy &rarr;</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="join">
+        <div class="container">
+            <div class="pane card">
+                <div class="pane-head">
+                    <p class="eyebrow">Class times</p>
+                    <h2>Pick your slot</h2>
+                    <p>IT Support Job Ready Program. Limited seats available to ensure personalised mentorship.</p>
+
+                    <div class="batches">
+                        <article class="batch">
+                            <span class="chip">IT Support Job Ready</span>
+                            <h3>Weekend slot</h3>
+                            <p class="batch-days">Sat &amp; Sun, live online</p>
+                            <p class="batch-time">5:00 PM &ndash; 8:00 PM <small>Sydney time</small></p>
+                            <button type="button" class="btn btn-amber btn-sm" onclick="selectProgram('it_weekend')">Select this slot</button>
+                        </article>
+
+                        <article class="batch">
+                            <span class="chip">IT Support Job Ready</span>
+                            <h3>Weekday slot</h3>
+                            <p class="batch-days">Wed, Thu &amp; Fri, live online</p>
+                            <p class="batch-time">6:00 PM &ndash; 8:00 PM <small>Sydney time</small></p>
+                            <button type="button" class="btn btn-amber btn-sm" onclick="selectProgram('it_weekday')">Select this slot</button>
+                        </article>
+                    </div>
+                    <div class="req pane-req">
+                        <span>Cloud Engineer and DevOps are expression of interest only. You must already work in IT and apply with your current resume.</span>
+                        <span class="req-links">
+                            <button type="button" class="link-btn" onclick="selectProgram('cloud_eoi')">Cloud Engineer EOI &rarr;</button>
+                            <button type="button" class="link-btn" onclick="selectProgram('devops_eoi')">DevOps EOI &rarr;</button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="pane-details">
+                    <div class="detail">
+                        <span class="detail-label">Investment</span>
+                        <div class="detail-value">Discuss on a call</div>
+                        <p class="detail-note">Flexible payment plans available.</p>
+                    </div>
+                    <div class="detail">
+                        <span class="detail-label">Delivery mode</span>
+                        <div class="detail-value">100% online</div>
+                        <p class="detail-note">Live, interactive online classes.</p>
+                    </div>
+                    <div class="detail">
+                        <span class="detail-label">Learning style</span>
+                        <div class="detail-value">Lab-based</div>
+                        <p class="detail-note">Build everything in your own home lab, then solve real tickets.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="curriculum" class="band">
+        <div class="container">
+            <div class="sec-head">
+                <p class="eyebrow">Syllabus &middot; Lab-based</p>
+                <h2>Build it, don't just watch it</h2>
+                <p>Every module is a hands-on build in your own lab, from the first install to the final project.</p>
+            </div>
+
+            <div class="tabs" role="tablist" aria-label="Choose a track syllabus">
+                <button type="button" class="tab" role="tab" id="tab-it" data-tab="it" aria-controls="panel-it" aria-selected="true">IT Support &amp; System Support</button>
+                <button type="button" class="tab" role="tab" id="tab-cloud" data-tab="cloud" aria-controls="panel-cloud" aria-selected="false" tabindex="-1">Cloud Engineer</button>
+                <button type="button" class="tab" role="tab" id="tab-devops" data-tab="devops" aria-controls="panel-devops" aria-selected="false" tabindex="-1">DevOps</button>
+            </div>
+
+            <div id="panel-it" role="tabpanel" aria-labelledby="tab-it">
+                <div class="module-grid">
+                    <article class="module card">
+                        <p class="module-no">Module 01</p>
+                        <h3>Home Lab Setup</h3>
+                        <p class="module-desc">Start with the hardware you'll support, then build your own lab.</p>
+                        <ul><li>Explore what's inside a PC and a server, and how a computer starts up</li><li>Install VMware Workstation Pro</li><li>Clean install of Windows 11 in a virtual machine</li><li>Create local users on a standalone machine</li></ul>
+                    </article>
+                    <article class="module card">
+                        <p class="module-no">Module 02</p>
+                        <h3>Network Troubleshooting</h3>
+                        <p class="module-desc">See how an office network fits together and fix it when it breaks.</p>
+                        <ul><li>Map the office network: IP addressing, DHCP and DNS</li><li>Use diagnostic commands and an IP scanner</li><li>Connect your virtual machines with hypervisor networking</li></ul>
+                    </article>
+                    <article class="module card">
+                        <p class="module-no">Module 03</p>
+                        <h3>Windows Server 2025 Build</h3>
+                        <p class="module-desc">Stand up your first server.</p>
+                        <ul><li>Configure hypervisor networking for the server</li><li>Build Windows Server 2025</li><li>Server housekeeping and virtual networking in action</li></ul>
+                    </article>
+                    <article class="module card">
+                        <p class="module-no">Module 04</p>
+                        <h3>Active Directory From Scratch</h3>
+                        <p class="module-desc">Create the directory your whole lab will run on.</p>
+                        <ul><li>Install the AD DS role, promote the server and create a forest</li><li>Create organizational units, users and groups</li><li>Enable the Recycle Bin and learn admin tips and tricks</li></ul>
+                    </article>
+                    <article class="module card">
+                        <p class="module-no">Module 05</p>
+                        <h3>Domain Join &amp; Group Policy</h3>
+                        <p class="module-desc">Bring devices into the domain and control them at scale.</p>
+                        <ul><li>Prepare a Windows 11 device and join it to the domain</li><li>Sign in as a domain user</li><li>Deploy a corporate wallpaper with Group Policy</li><li>Configure account lockout and password policies</li></ul>
+                    </article>
+                    <article class="module card">
+                        <p class="module-no">Module 06</p>
+                        <h3>File Server &amp; Shares</h3>
+                        <p class="module-desc">Publish shared files and make them recoverable.</p>
+                        <ul><li>Mount a disk and create a file share</li><li>Map network drives manually and with Group Policy</li><li>Enable access-based enumeration</li><li>Turn on Shadow Copy for self-service file recovery</li></ul>
+                    </article>
+                    <article class="module card">
+                        <p class="module-no">Module 07</p>
+                        <h3>Print Server</h3>
+                        <p class="module-desc">Set up printing the way an office expects it to work.</p>
+                        <ul><li>Map printers directly for users</li><li>Add and manage printers centrally</li><li>Deploy printers with Group Policy and item-level targeting</li></ul>
+                    </article>
+                    <article class="module card">
+                        <p class="module-no">Module 08</p>
+                        <h3>Microsoft 365 Tenant</h3>
+                        <p class="module-desc">Start a tenant and make it yours.</p>
+                        <ul><li>Start a Microsoft 365 Business Standard trial</li><li>Buy a domain and onboard it to your tenant</li><li>Create users and assign licenses</li><li>Optional: connect on-premises AD with Entra Connect, hybrid identity and custom UPN</li></ul>
+                    </article>
+                    <article class="module card">
+                        <p class="module-no">Module 09</p>
+                        <h3>Exchange Online &amp; Mail Flow</h3>
+                        <p class="module-desc">Manage mail the way a service desk does.</p>
+                        <ul><li>Set up user mailboxes and Outlook</li><li>Create shared mailboxes and manage delegation</li><li>Build a distribution list</li><li>Convert a mailbox to shared, enable archiving and litigation hold</li></ul>
+                    </article>
+                    <article class="module card">
+                        <p class="module-no">Module 10</p>
+                        <h3>Intune &amp; Endpoint Management</h3>
+                        <p class="module-desc">Enrol and manage devices without touching them.</p>
+                        <ul><li>Prepare Autopilot: upload hardware hashes by USB and online, and tag device groups</li><li>Run Autopilot end to end</li><li>Use remote actions and compliance policies</li><li>Deploy apps: Company Portal, Microsoft Store, MSI line-of-business and Win32 packages</li><li>Push a configuration profile</li></ul>
+                    </article>
+                    <article class="module card">
+                        <p class="module-no">Module 11</p>
+                        <h3>Remote Management &amp; Backup</h3>
+                        <p class="module-desc">Monitor your devices and protect your data.</p>
+                        <ul><li>Deploy an RMM agent and explore remote monitoring and management</li><li>Onboard a backup tool to your Microsoft 365 tenant</li><li>Back up and restore data</li></ul>
+                    </article>
+                    <article class="module card">
+                        <p class="module-no">Module 12</p>
+                        <h3>Service Desk Skills</h3>
+                        <p class="module-desc">Learn how a service desk runs day to day.</p>
+                        <ul><li>Walk through a ticketing system</li><li>Work ticket types and manage priority</li></ul>
+                    </article>
+                    <article class="module wide card">
+                        <p class="module-no">Module 13</p>
+                        <h3>Ticket Simulations</h3>
+                        <p class="module-desc">Put it all to work: solve real help desk tickets end to end, from the engineer's seat.</p>
+                        <ul class="pills"><li class="pill">Account and access requests</li><li class="pill">Mailbox and Microsoft 365 issues</li><li class="pill">Workstation, printer and network problems</li><li class="pill">Backup and restore requests</li></ul>
+                    </article>
+                    <article class="module wide card">
+                        <p class="module-no">Module 14</p>
+                        <h3>Career Launch</h3>
+                        <p class="module-desc">Get ready to apply for your first IT support role.</p>
+                        <ul class="pills"><li class="pill">Resume &amp; ATS</li><li class="pill">Resume review</li><li class="pill">Career coaching</li><li class="pill">Mock interviews</li></ul>
+                    </article>
+                </div>
+            </div>
+
+            <div id="panel-cloud" role="tabpanel" aria-labelledby="tab-cloud" hidden>
+                <div class="req">Expression of interest only. You must already be working in IT, and your application needs your current resume.</div>
+                <div class="track-block">
+                    <div class="module-grid cols3">
+                    <article class="module card">
+                        <p class="module-no">Certification</p>
+                        <h3>RHCSA / RHCE Certification</h3>
+                        <p class="module-desc">Run Red Hat Enterprise Linux like a production admin.</p>
+                        <ul><li>Users, groups and permissions</li><li>Storage and LVM</li><li>Services with systemd</li><li>Networking, firewall and SELinux</li><li>Automate with Ansible (RHCE)</li><li>Prepare for the RHCSA and RHCE exams</li></ul>
+                    </article>
+                    <article class="module card">
+                        <p class="module-no">Certification</p>
+                        <h3>AWS Solutions Architect Certification</h3>
+                        <p class="module-desc">Design and build on AWS.</p>
+                        <ul><li>Identity and access with IAM</li><li>VPC networking</li><li>Compute and storage with EC2 and S3</li><li>Design for security and high availability</li><li>Prepare for the Solutions Architect exam</li></ul>
+                    </article>
+                    <article class="module card">
+                        <p class="module-no">Certification</p>
+                        <h3>Terraform Certification</h3>
+                        <p class="module-desc">Build cloud environments from code.</p>
+                        <ul><li>Write your first configuration</li><li>Variables, outputs and modules</li><li>Manage state</li><li>Provision a complete cloud environment from code</li><li>Prepare for the HashiCorp Terraform Associate exam</li></ul>
+                    </article>
+                    <article class="module card">
+                        <p class="module-no">Course</p>
+                        <h3>Git &amp; GitHub</h3>
+                        <p class="module-desc">Track, share and review every change.</p>
+                        <ul><li>Version control basics: commits, branches and merges</li><li>Resolve merge conflicts</li><li>Work with GitHub: remotes, pull requests and code review</li><li>Use Git workflows for infrastructure and pipeline code</li></ul>
+                    </article>
+                    <article class="module card">
+                        <p class="module-no">Course</p>
+                        <h3>Python for Automation</h3>
+                        <p class="module-desc">Write scripts that do the repetitive work for you.</p>
+                        <ul><li>Python fundamentals for engineers</li><li>Work with files, JSON and APIs</li><li>Automate server and cloud tasks</li></ul>
+                    </article>
+                    </div>
+                </div>
+                <div class="track-block">
+                    <div class="module-grid">
+                    <article class="module wide card">
+                        <p class="module-no">Finish strong</p>
+                        <h3>Projects and interview preparation</h3>
+                        <p class="module-desc">Leave with projects you can show and an interview plan.</p>
+                        <ul class="pills"><li class="pill">Real-world projects</li><li class="pill">Publish your work on GitHub</li><li class="pill">Resume and LinkedIn</li><li class="pill">Cloud engineer interview questions</li><li class="pill">Mock interviews</li></ul>
+                    </article>
+                    </div>
+                </div>
+            </div>
+
+            <div id="panel-devops" role="tabpanel" aria-labelledby="tab-devops" hidden>
+                <div class="req">Expression of interest only. You must already be working in IT, and your application needs your current resume.</div>
+                <div class="track-block">
+                    <div class="module-grid cols3">
+                    <article class="module card">
+                        <p class="module-no">Certification</p>
+                        <h3>RHCSA / RHCE Certification</h3>
+                        <p class="module-desc">Run Red Hat Enterprise Linux like a production admin.</p>
+                        <ul><li>Users, groups and permissions</li><li>Storage and LVM</li><li>Services with systemd</li><li>Networking, firewall and SELinux</li><li>Automate with Ansible (RHCE)</li><li>Prepare for the RHCSA and RHCE exams</li></ul>
+                    </article>
+                    <article class="module card">
+                        <p class="module-no">Certification</p>
+                        <h3>AWS Solutions Architect Certification</h3>
+                        <p class="module-desc">Design and build on AWS.</p>
+                        <ul><li>Identity and access with IAM</li><li>VPC networking</li><li>Compute and storage with EC2 and S3</li><li>Design for security and high availability</li><li>Prepare for the Solutions Architect exam</li></ul>
+                    </article>
+                    <article class="module card">
+                        <p class="module-no">Course</p>
+                        <h3>Docker</h3>
+                        <p class="module-desc">Package and run applications in containers.</p>
+                        <ul><li>Images, containers and registries</li><li>Write Dockerfiles</li><li>Volumes and networking</li><li>Multi-container apps with Docker Compose</li></ul>
+                    </article>
+                    <article class="module card">
+                        <p class="module-no">Certification</p>
+                        <h3>CKA Certification</h3>
+                        <p class="module-desc">Containers and Kubernetes, from image to cluster.</p>
+                        <ul><li>Containers, pods and the Kubernetes architecture</li><li>Build a cluster</li><li>Deployments, services and ingress</li><li>Storage and configuration</li><li>Troubleshoot broken clusters</li><li>Prepare for the CKA exam</li></ul>
+                    </article>
+                    <article class="module card">
+                        <p class="module-no">Course</p>
+                        <h3>CI/CD with Jenkins</h3>
+                        <p class="module-desc">Automate every build, test and release.</p>
+                        <ul><li>Install and configure Jenkins</li><li>Write pipelines as code</li><li>Build, test and deploy containers automatically</li></ul>
+                    </article>
+                    <article class="module card">
+                        <p class="module-no">Course</p>
+                        <h3>Monitoring with Prometheus &amp; Grafana</h3>
+                        <p class="module-desc">See what your systems are doing.</p>
+                        <ul><li>Collect metrics with Prometheus</li><li>Build Grafana dashboards</li><li>Set up alerts</li></ul>
+                    </article>
+                    <article class="module card">
+                        <p class="module-no">Course</p>
+                        <h3>Git &amp; GitHub</h3>
+                        <p class="module-desc">Track, share and review every change.</p>
+                        <ul><li>Version control basics: commits, branches and merges</li><li>Resolve merge conflicts</li><li>Work with GitHub: remotes, pull requests and code review</li><li>Use Git workflows for infrastructure and pipeline code</li></ul>
+                    </article>
+                    <article class="module card">
+                        <p class="module-no">Course</p>
+                        <h3>Python for Automation</h3>
+                        <p class="module-desc">Write scripts that do the repetitive work for you.</p>
+                        <ul><li>Python fundamentals for engineers</li><li>Work with files, JSON and APIs</li><li>Automate server and cloud tasks</li></ul>
+                    </article>
+                    </div>
+                </div>
+                <div class="track-block">
+                    <div class="module-grid">
+                    <article class="module wide card">
+                        <p class="module-no">Finish strong</p>
+                        <h3>Projects and interview preparation</h3>
+                        <p class="module-desc">Leave with projects you can show and an interview plan.</p>
+                        <ul class="pills"><li class="pill">Real-world projects</li><li class="pill">Publish your work on GitHub</li><li class="pill">Resume and LinkedIn</li><li class="pill">DevOps interview questions</li><li class="pill">Mock interviews</li></ul>
+                    </article>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    </main>
+
+    <footer id="contact" class="footer">
+        <div class="container">
+            <h2>Start Your IT Journey</h2>
+            <p class="footer-lede">Live online classes on weekends and weekday evenings. Book a quick chat or send your application.</p>
+
+            <div class="booking">
+                <p>Not sure yet? Book a 15-minute 1:1 chat to understand exactly what we cover.</p>
+                <a href="https://calendar.app.google/wXmZ8zYmmppoMxCg9" target="_blank" rel="noopener" class="btn btn-ghost">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+                    Book Walkthrough
+                </a>
+            </div>
+
+            <div class="divider-or">OR</div>
+
+            <p class="apply-lede">Submit your details to apply.</p>
+
+            <form action="https://formsubmit.co/info@eveningtechschool.com" method="POST" enctype="multipart/form-data" class="application-form" id="applyForm">
+
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="_subject" value="New application: Evening Tech School">
+                <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" placeholder="John Doe" autocomplete="name" required>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group half-width">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="john@example.com" autocomplete="email" required>
+                    </div>
+                    <div class="form-group half-width">
+                        <label for="phone">Contact Number</label>
+                        <input type="tel" id="phone" name="phone" placeholder="0400 000 000" autocomplete="tel" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="selected_program">Select a Track</label>
+                    <select id="selected_program" name="selected_program" required>
+                        <option value="" disabled selected>-- Choose your track --</option>
+                        <option data-id="it_weekend" value="IT Support &amp; System Support - Weekend slot (Sat &amp; Sun, 5-8pm)">IT Support &amp; System Support: Sat &amp; Sun, 5-8pm</option>
+                        <option data-id="it_weekday" value="IT Support &amp; System Support - Weekday slot (Wed, Thu &amp; Fri, 6-8pm)">IT Support &amp; System Support: Wed, Thu &amp; Fri, 6-8pm</option>
+                        <option data-id="cloud_eoi" data-eoi value="Cloud Engineer - Expression of interest">Cloud Engineer: expression of interest</option>
+                        <option data-id="devops_eoi" data-eoi value="DevOps - Expression of interest">DevOps: expression of interest</option>
+                    </select>
+                </div>
+
+                <div class="form-group check" id="devops-check" hidden>
+                    <label for="works_in_it">
+                        <input type="checkbox" id="works_in_it" name="works_in_it" value="yes">
+                        <span>I currently work in IT. The Cloud Engineer and DevOps tracks are for people already working in IT.</span>
+                    </label>
+                </div>
+
+                <div class="form-group" id="devops-resume" hidden>
+                    <label for="resume">Attach your current resume (PDF or Word, max 5 MB)</label>
+                    <input type="file" id="resume" name="attachment" accept=".pdf,.doc,.docx">
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Tell us about yourself</label>
+                    <textarea id="message" name="message" rows="4" placeholder="What are you currently doing? Are you ready to commit?" required></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-amber btn-submit">Submit Application</button>
+                <p class="form-note">Your details are only used to respond to your application.</p>
+            </form>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Evening Tech School. All rights reserved.</p>
+                <a href="mailto:info@eveningtechschool.com">info@eveningtechschool.com</a>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/61280747155?text=Hi%20EveningTechSchool,%20I%20am%20interested%20in%20your%20mentorship%20program."
+       class="whatsapp-float"
+       target="_blank"
+       rel="noopener"
+       aria-label="Chat with us on WhatsApp">
+        <svg class="whatsapp-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" aria-hidden="true">
+            <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
+        </svg>
+    </a>
+
+    <script>
+        var menuBtn = document.getElementById('menuBtn');
+        var navLinks = document.getElementById('navLinks');
+
+        function setMenu(open) {
+            navLinks.classList.toggle('active', open);
+            menuBtn.classList.toggle('active', open);
+            menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+            menuBtn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+            document.body.style.overflow = open ? 'hidden' : '';
+        }
+
+        menuBtn.addEventListener('click', function () {
+            setMenu(!navLinks.classList.contains('active'));
+        });
+        navLinks.querySelectorAll('a').forEach(function (a) {
+            a.addEventListener('click', function () { setMenu(false); });
+        });
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') setMenu(false);
+        });
+        window.addEventListener('resize', function () {
+            if (window.innerWidth > 900) setMenu(false);
+        });
+
+        /* Pick a program, jump to the form and focus the dropdown */
+        function syncProgram() {
+            var sel = document.getElementById('selected_program');
+            var opt = sel.options[sel.selectedIndex];
+            var isEoi = !!(opt && opt.hasAttribute('data-eoi'));
+            var cb = document.getElementById('works_in_it');
+            var resume = document.getElementById('resume');
+            document.getElementById('devops-check').hidden = !isEoi;
+            document.getElementById('devops-resume').hidden = !isEoi;
+            cb.required = isEoi;
+            resume.required = isEoi;
+            if (!isEoi) { cb.checked = false; resume.value = ''; }
+            document.querySelector('.btn-submit').textContent = isEoi ? 'Submit Expression of Interest' : 'Submit Application';
+            document.getElementById('message').placeholder = isEoi
+                ? 'What is your current IT role, and what do you want to move into?'
+                : 'What are you currently doing? Are you ready to commit?';
+        }
+        document.getElementById('selected_program').addEventListener('change', syncProgram);
+        function selectProgram(programId) {
+            var programSelect = document.getElementById('selected_program');
+            var opt = programSelect.querySelector('option[data-id="' + programId + '"]');
+            if (opt) programSelect.value = opt.value;
+            syncProgram();
+            document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+            setTimeout(function () { programSelect.focus(); }, 800);
+        }
+
+        /* Resume size check and double-submit guard */
+        var resumeInput = document.getElementById('resume');
+        resumeInput.addEventListener('change', function () {
+            var f = resumeInput.files && resumeInput.files[0];
+            resumeInput.setCustomValidity(f && f.size > 5 * 1024 * 1024 ? 'Please attach a file under 5 MB.' : '');
+        });
+        document.getElementById('applyForm').addEventListener('submit', function () {
+            var b = this.querySelector('.btn-submit');
+            b.disabled = true;
+            b.textContent = 'Sending...';
+        });
+        window.addEventListener('pageshow', function () { syncProgram(); document.querySelector('.btn-submit').disabled = false; });
+
+        /* Syllabus tabs */
+        var TAB_IDS = ['it', 'cloud', 'devops'];
+        function showTab(id, focus) {
+            TAB_IDS.forEach(function (k) {
+                var t = document.getElementById('tab-' + k);
+                var p = document.getElementById('panel-' + k);
+                var on = (k === id);
+                t.setAttribute('aria-selected', on ? 'true' : 'false');
+                t.tabIndex = on ? 0 : -1;
+                p.hidden = !on;
+                if (on && focus) t.focus();
+            });
+        }
+        document.querySelectorAll('.tab').forEach(function (t) {
+            t.addEventListener('click', function () { showTab(t.getAttribute('data-tab')); });
+            t.addEventListener('keydown', function (e) {
+                if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+                    e.preventDefault();
+                    var i = TAB_IDS.indexOf(t.getAttribute('data-tab'));
+                    var step = e.key === 'ArrowRight' ? 1 : TAB_IDS.length - 1;
+                    showTab(TAB_IDS[(i + step) % TAB_IDS.length], true);
+                }
+            });
+        });
+        function openSyllabus(id) {
+            showTab(id);
+            document.getElementById('curriculum').scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+
+</body>
+</html>
