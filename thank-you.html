@@ -124,7 +124,7 @@
         .wa-widget .whatsapp-float[aria-expanded="true"] .wa-x { display: block; }
         .wa-widget .whatsapp-float[aria-expanded="true"] .wa-logo { display: none; }
         .wa-panel {
-            width: min(360px, calc(100vw - 36px)); max-height: min(700px, calc(100vh - 190px)); max-height: min(700px, calc(100dvh - 190px));
+            width: min(360px, calc(100vw - 36px)); max-height: min(600px, calc(100vh - 190px)); max-height: min(600px, calc(100dvh - 190px));
             background: #1C2254; color: #FFFFFF; border: 1px solid rgba(255, 255, 255, 0.14); border-radius: 22px;
             box-shadow: 0 18px 50px rgba(0, 0, 0, 0.45); transform-origin: bottom right; animation: wa-in 0.22s ease-out;
             display: flex; flex-direction: column; overflow: hidden;
@@ -165,29 +165,6 @@
         .wa-teaser-x { flex: none; width: 32px; height: 32px; border: 0; border-radius: 8px; background: transparent; color: #3D4180; font-size: 1.2rem; line-height: 1; cursor: pointer; }
         .wa-teaser-x:hover { background: #F4F5FA; }
         @media (max-width: 720px) { .wa-widget { right: 18px; bottom: 18px; } }
-
-        /* Phones: the enquiry opens as a bottom sheet so every course option is visible */
-        @media (max-width: 600px) {
-            .wa-widget.is-open { z-index: 1100; }
-            .wa-widget.is-open::before { content: ""; position: fixed; inset: 0; background: rgba(8, 10, 30, 0.6); }
-            .wa-widget.is-open .whatsapp-float, .wa-widget.is-open .wa-teaser { display: none; }
-            .wa-panel {
-                position: fixed; left: 0; right: 0; bottom: 0; width: 100%;
-                max-height: calc(100vh - 24px); max-height: calc(100dvh - 24px);
-                border-radius: 22px 22px 0 0; border-bottom: 0; transform-origin: bottom center;
-                padding-bottom: env(safe-area-inset-bottom);
-                animation: wa-up 0.25s ease-out;
-            }
-            @keyframes wa-up { from { transform: translateY(40px); opacity: 0; } to { transform: none; opacity: 1; } }
-            .wa-head { padding: 12px 16px; }
-            .wa-head svg { width: 36px; height: 36px; }
-            .wa-body { padding: 12px 16px 16px; gap: 10px; }
-            .wa-bubble { padding: 8px 12px; font-size: 0.92rem; }
-            .wa-name label { margin-bottom: 4px; }
-            .wa-options { gap: 6px; }
-            .wa-opt { min-height: 48px; padding: 8px 14px; }
-            .wa-foot { display: none; }
-        }
         @media (prefers-reduced-motion: reduce) { .wa-panel, .wa-teaser { animation: none; } }
     </style>
 </head>
@@ -288,7 +265,7 @@
                 <button type="button" class="wa-close" id="waClose" aria-label="Close">&times;</button>
             </div>
             <div class="wa-body">
-                <p class="wa-bubble">Hi there! Which course would you like to ask about?</p>
+                <p class="wa-bubble">Hi there! Which course would you like to ask about? Pick one and we'll continue the chat on WhatsApp.</p>
                 <div class="wa-name">
                     <label for="waName">Your name (optional)</label>
                     <input type="text" id="waName" placeholder="e.g. Ram" autocomplete="given-name" maxlength="60">
@@ -301,7 +278,7 @@
                     <button type="button" class="wa-opt" data-course=""><span>Something else<small>Fees, payment plans or a general question</small></span></button>
                 </div>
             </div>
-            <p class="wa-foot">Pick one and WhatsApp opens with your message ready to send.</p>
+            <p class="wa-foot">Opens WhatsApp with your message ready to send.</p>
         </div>
         <div class="wa-teaser" id="waTeaser" hidden>
             <button type="button" class="wa-teaser-open" id="waTeaserOpen">Questions about a course? Chat with us</button>
@@ -338,7 +315,6 @@
             function store(k, v) { try { if (v === undefined) return sessionStorage.getItem(k); sessionStorage.setItem(k, v); } catch (e) { return null; } }
             function setOpen(open) {
                 panel.hidden = !open;
-                document.getElementById('waWidget').classList.toggle('is-open', open);
                 toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
                 toggle.setAttribute('aria-label', open ? 'Close WhatsApp enquiry' : 'Ask about a course on WhatsApp');
                 if (open) { teaser.hidden = true; store('waTeaserSeen', '1'); panel.querySelector('.wa-body').scrollTop = 0; setTimeout(function () { panel.querySelector('.wa-opt').focus({ preventScroll: true }); }, 50); }
@@ -348,7 +324,7 @@
             document.getElementById('waTeaserOpen').addEventListener('click', function () { setOpen(true); });
             document.getElementById('waTeaserX').addEventListener('click', function () { teaser.hidden = true; store('waTeaserSeen', '1'); });
             document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !panel.hidden) { setOpen(false); toggle.focus(); } });
-            document.addEventListener('click', function (e) { var wg = document.getElementById('waWidget'); if (!panel.hidden && (e.target === wg || !wg.contains(e.target))) setOpen(false); });
+            document.addEventListener('click', function (e) { if (!panel.hidden && !document.getElementById('waWidget').contains(e.target)) setOpen(false); });
             panel.querySelectorAll('.wa-opt').forEach(function (btn) {
                 btn.addEventListener('click', function () {
                     var name = nameInput.value.trim();
