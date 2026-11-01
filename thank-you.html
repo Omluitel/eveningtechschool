@@ -294,15 +294,23 @@
     </div>
 
     <script>
-        /* Expression-of-interest wording when coming from the Cloud Engineer or DevOps form */
+        /* Name the track or slot the person applied for */
         (function () {
-            var type = new URLSearchParams(location.search).get('type');
-            if (type !== 'eoi') return;
-            document.title = 'Thank you | Evening Tech School';
-            document.getElementById('eyebrow').textContent = 'Expression of interest received';
-            document.getElementById('lede').textContent = 'Your expression of interest and resume are on their way to our team. We\'ll review your current IT experience and contact you about the Cloud Engineer and DevOps tracks as places open.';
+            var q = new URLSearchParams(location.search);
+            var type = q.get('type'), track = q.get('track');
+            var lede = document.getElementById('lede');
+            if (type !== 'eoi') {
+                var SLOTS = { weekend: 'weekend slot (Sat & Sun, 5-8pm)', weekday: 'weekday slot (Wed, Thu & Fri, 6-8pm)' };
+                if (SLOTS[track]) lede.textContent = 'Your application is on its way to our team. We\'ll review your details and get back to you by email or phone to talk through the IT Support Job Ready Program and the ' + SLOTS[track] + '.';
+                return;
+            }
+            var NAMES = { cloud: 'Cloud Engineer', devops: 'DevOps' };
+            var name = NAMES[track];
+            document.getElementById('eyebrow').textContent = name ? name + ' expression of interest received' : 'Expression of interest received';
+            lede.textContent = 'Your expression of interest and resume are on their way to our team. We\'ll review your current IT experience and contact you about the '
+                + (name ? name + ' track' : 'track you chose') + ' as places open.';
             document.getElementById('step1').textContent = 'We read your resume to understand your current IT role and the move you want to make.';
-            document.getElementById('step3').textContent = 'When a track opens, we\'ll let you know and help you secure a place.';
+            document.getElementById('step3').textContent = name ? 'When the ' + name + ' track opens, we\'ll let you know and help you secure a place.' : 'When the track opens, we\'ll let you know and help you secure a place.';
         })();
     </script>
 

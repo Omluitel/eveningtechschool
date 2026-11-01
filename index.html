@@ -1052,6 +1052,9 @@
                 var opt = sel.options[sel.selectedIndex];
                 var next = new URL('thank-you.html', location.href);
                 if (opt && opt.hasAttribute('data-eoi')) next.searchParams.set('type', 'eoi');
+                /* which track or slot, so the thank-you page can name it */
+                var TRACKS = { cloud_eoi: 'cloud', devops_eoi: 'devops', it_weekend: 'weekend', it_weekday: 'weekday' };
+                if (opt && TRACKS[opt.getAttribute('data-id')]) next.searchParams.set('track', TRACKS[opt.getAttribute('data-id')]);
                 document.getElementById('nextUrl').value = next.href;
             }
             var b = this.querySelector('.btn-submit');
